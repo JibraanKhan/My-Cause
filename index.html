@@ -7,18 +7,27 @@
   </head>
   <body>
     <script type="text/javascript">
+      var dataset;
       var rowConverter = function(d){
-        return {
-          INSTNM: d.INSTNM,
-          ADM_RATE_ALL: parseFloat(d.ADM_RATE_ALL)
-        };
+        var rows = {};
+
+        if (d.INSTNM){
+          rows['INSTNM'] = d.INSTNM;
+        }
+
+        if (d.ADM_RATE_ALL){
+          rows['ADM_RATE_ALL'] = d.ADM_RATE_ALL;
+        }
+
+        return rows
       }
 
       d3.csv('CollegeScoreboard.csv', rowConverter, function(error, data){
         if (error){
           console.log(error);
         } else{
-          console.log(data);
+          dataset = data;
+          console.log(data.INSTM);
         }
       });
     </script>
