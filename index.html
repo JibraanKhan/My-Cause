@@ -22,7 +22,7 @@
         return rows
       }
 
-      d3.csv('CollegeScoreboard.csv', rowConverter, function(error, data){
+      d3.csv('CollegeScoreboard.csv', function(error, data){
         if (error){
           console.log(error);
         } else{
