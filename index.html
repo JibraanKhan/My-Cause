@@ -7,8 +7,18 @@
   </head>
   <body>
     <script type="text/javascript">
-      d3.csv('CollegeScoreboard.csv', function(data){
-        console.log(data)
+      var rowConverter = function(d){
+        return {
+          College: d.INSTNM,
+          AdmissionRate: parseFloat(d.ADM_RATE_ALL);
+        }
+      }
+      d3.csv('CollegeScoreboard.csv', rowConverter, function(error, data){
+        if (error){
+          console.log(error);
+        } else{
+          console.log(data);
+        }
       });
     </script>
   </body>
