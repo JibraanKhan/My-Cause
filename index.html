@@ -2,14 +2,36 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script type="text/javascript"src="d3.js"></script>
+    <title>D3 Work</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+    <script type="text/javascript" src="d3.js"></script>
   </head>
   <body>
     <script type="text/javascript">
-      d3.csv('CollegeScoreboard.csv', function(d){
-        console.log(d.ADM_RATE_ALL);
-      });
+      var body = d3.select('body');
+
+      var div = body.append('div')
+
+      div.append('a')
+          .text('My Data')
+          .attr('href', 'https://www.kaggle.com/gregorut/videogamesales#vgsales.csv');
+
+      var texts = [['My Cause', 'To work on huge game projects with a bunch of people, preferably friends.'],
+                   ['Why My Cause Is Important To Me', 'I want to work on large games and make my ideas come to life. The fact that we can plan something on a paper, and make it come to life in the digital world is so fascinating and perhaps one of the most addictive feelings in this world. The game creation process, is to me, a process of making a world that you can have others experience. I think the best way to convey your ideas to others is through experience, and a true artist always conceals a part of themselves in their work. That is my dream, I want my games to have that uniqueness to them that reveals a part of my life that nobody can find out through talking to me.'],
+                   ['Why This Data Is Important To My Cause', 'This data speaks of video game sales. These sales help determine the games’ budget, revenue, and your income. They are a very big part in determining the size of a project, how much resources you can use, what games are trending, and how many people you can employ to your team. While this data may be a superficial way to judge the quality of the games, it still applies because marketing is a completely different mindset of the game development process. It shows what games did market their games well, and which did not. These statistics can help me learn and better analyze my game design process.']
+];
+
+      body.selectAll('h1')
+          .data(texts)
+          .enter()
+          .append('h1')
+          .text(function(d){
+            return d[0];
+          })
+          .append('p')
+          .text(function(d){
+            return d[1];
+          });
     </script>
   </body>
 </html>

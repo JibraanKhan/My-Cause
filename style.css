@@ -1,0 +1,22 @@
+h1, p, a{
+  text-align: left;
+}
+
+h1{
+  font-size: 50px;
+  color: darkred;
+  text-align: center;
+}
+
+p{
+  font-size: 40px;
+  font-style: normal;
+  color: darkblue;
+  text-indent: 40px;
+  margin-bottom: 100px;
+}
+
+a{
+  font-size: 60px;
+  padding-left: 46%;
+}
