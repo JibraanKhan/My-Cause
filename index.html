@@ -10,8 +10,8 @@
       var rowConverter = function(d){
         return {
           College: d.INSTNM,
-          AdmissionRate: parseFloat(d.ADM_RATE_ALL);
-        }
+          AdmissionRate: parseFloat(d.ADM_RATE_ALL)
+        };
       }
       d3.csv('CollegeScoreboard.csv', rowConverter, function(error, data){
         if (error){
